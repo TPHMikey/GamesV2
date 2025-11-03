@@ -5,9 +5,9 @@ const games = [
     path: "games/flappy/index.html"
   },
   {
-    name: "Super Mario 64",
-    thumbnail: "assets/images/sm64.jpeg",
-    path: "games/SuperMario64/index.html" // points to N64Wasm page
+    name: "2D Minecraft",
+    thumbnail: "assets/images/2DMC.png",
+    path: "games/2D Minecraft/2D Minecraft.html" // points to N64Wasm page
   }
 ];
 
