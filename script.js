@@ -7,12 +7,12 @@ const games = [
   {
     name: "2D Minecraft",
     thumbnail: "assets/images/2DMC.png",
-    path: "games/2D Minecraft/2D Minecraft.html" // points to N64Wasm page
-  }
-   {
+    path: "games/2D Minecraft/2D Minecraft.html"
+  },
+  {
     name: "3D Minecraft",
     thumbnail: "assets/images/3DMC.png",
-    path: "games/Eaglercraft/eaglercraft.1.5.2.html" // points to N64Wasm page
+    path: "games/Eaglercraft/eaglercraft.1.5.2.html"
   }
 ];
 
