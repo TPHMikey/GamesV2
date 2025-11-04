@@ -15,8 +15,8 @@ featuredSection.innerHTML = `
 // Game List (only games you have)
 const games = [
   { name: "Flappy Bird", thumbnail: "assets/images/flappy.png", path: "assets/games/FlappyBird/index.html", category: "puzzle" },
-  { name: "2D Minecraft", thumbnail: "assets/images/2DMC.png", path: "assets/games/2DMC/index.html", category: "adventure" },
-  { name: "3D Minecraft", thumbnail: "assets/images/3DMC.png", path: "assets/games/3DMC/index.html", category: "adventure" },
+  { name: "2D Minecraft", thumbnail: "assets/images/2DMC.png", path: "assets/games/2D Minecraft/2D Minecraft.html", category: "adventure" },
+  { name: "3D Minecraft", thumbnail: "assets/images/PM.png", path: "assets/games/PacMan/index.html", category: "adventure" },
   // Add more games here that you actually have
 ];
 
