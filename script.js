@@ -43,7 +43,7 @@ const games = [
     category: "action"
   },
    {
-    name: "Proxy",
+    name: "dogeub",
     thumbnail: "assets/images/DUB.png",
     url: "https://sam.fpr.net",
     category: "unblockers"
