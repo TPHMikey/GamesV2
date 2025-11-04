@@ -26,7 +26,7 @@ const games = [
   },
    {
     name: "Five Nights At Freddys 1",
-    thumbnail: "assets/images/GTAG.png",
+    thumbnail: "assets/images/FNAF1.png",
     path: "games/Five%20Nights%20At%20Freddys/index.html",
     category: "puzzle"
   },
