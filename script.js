@@ -46,7 +46,7 @@ const games = [
     name: "Proxy",
     thumbnail: "assets/images/DUB.png",
     url: "https://sam.fpr.net",
-    category: "action"
+    category: "unblockers"
   },
     {
     name: "Super Mario 64",
