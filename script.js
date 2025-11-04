@@ -25,10 +25,10 @@ const games = [
     category: "adventure"
   },
    {
-    name: "Gorilla Tag 2D",
+    name: "Five Nights At Freddys 1",
     thumbnail: "assets/images/GTAG.png",
-    path: "games/Gorilla%20Tag%202D/index.html",
-    category: "adventure"
+    path: "games/Five%20Nights%20At%20Freddys/index.html",
+    category: "puzzle"
   },
   // ADD NEW GAMES HERE
 ];
