@@ -18,6 +18,12 @@ const games = [
     path: "games/PacMan/index.html",
     category: "adventure"
   },
+  {
+    name: "Geometry Dash",
+    thumbnail: "assets/images/GM.png",
+    path: "games/Geometry%20Dash/index.html",
+    category: "adventure"
+  },
   // ADD NEW GAMES HERE
 ];
 
