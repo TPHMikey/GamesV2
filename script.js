@@ -42,6 +42,12 @@ const games = [
     url: "https://evowars.io/?v=2.17.48",
     category: "action"
   },
+   {
+    name: "Proxy",
+    thumbnail: "assets/images/DUB.png",
+    url: "https://sam.fpr.net",
+    category: "action"
+  },
 ];
 
 // Get the container from your HTML
