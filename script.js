@@ -1,9 +1,3 @@
-// Featured Game
-const featuredGame = {
-  name: "Flappy Bird",
-  thumbnail: "assets/images/flappy.png",
-  path: "assets/games/FlappyBird/index.html"
-};
 
 const featuredSection = document.getElementById("featuredGame");
 featuredSection.innerHTML = `
@@ -14,9 +8,9 @@ featuredSection.innerHTML = `
 
 // Game List (your actual games)
 const games = [
-  { name: "Flappy Bird", thumbnail: "assets/images/flappy.png", path: "assets/games/FlappyBird/index.html", category: "puzzle" },
-  { name: "2D Minecraft", thumbnail: "assets/images/2DMC.png", path: "assets/games/2D Minecraft/2D Minecraft.html", category: "adventure" },
-  { name: "3D Minecraft", thumbnail: "assets/images/PM.png", path: "assets/games/PacMan/index.html", category: "adventure" },
+  { name: "Flappy Bird", thumbnail: "assets/images/flappy.png", path: "games/FlappyBird/index.html", category: "puzzle" },
+  { name: "2D Minecraft", thumbnail: "assets/images/2DMC.png", path: "games/2D Minecraft/2D Minecraft.html", category: "adventure" },
+  { name: "3D Minecraft", thumbnail: "assets/images/PM.png", path: "games/PacMan/index.html", category: "adventure" },
   // Add more games here
 ];
 
