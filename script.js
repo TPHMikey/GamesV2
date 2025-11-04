@@ -1,5 +1,30 @@
+// Your games array
 const games = [
-  {,
+  {
+    name: "Flappy Bird",
+    thumbnail: "assets/images/flappy.png",
+    path: "games/flappy/index.html",
+    category: "puzzle"
+  },
+  {
+    name: "2D Minecraft",
+    thumbnail: "assets/images/2DMC.png",
+    path: "games/2D%20Minecraft/2D%20Minecraft.html",
+    category: "adventure"
+  },
+  {
+    name: "PacMan",
+    thumbnail: "assets/images/PM.png",
+    path: "games/PacMan/index.html",
+    category: "adventure"
+  },
+  {
+    name: "Geometry Dash",
+    thumbnail: "assets/images/GM.png",
+    path: "games/Geometry%20Dash/index.html",
+    category: "adventure"
+  },
+  {
     name: "Five Nights At Freddys 1",
     thumbnail: "assets/images/FNAF1.png",
     url: "https://mikeyboy6734.github.io/FNAF1-Web",
@@ -7,11 +32,22 @@ const games = [
   },
 ];
 
-const container = document.getElementById('gameGrid'); // matches your HTML
+// Get the container from your HTML
+const container = document.getElementById('gameGrid');
 
-// Render all games
+// Function to render games
 function renderGames(gamesToRender) {
-  container.innerHTML = ''; // clear existing cards
+  container.innerHTML = ''; // clear old content
+
+  if (gamesToRender.length === 0) {
+    const noGames = document.createElement('p');
+    noGames.textContent = "No games found.";
+    noGames.style.color = "#fff";
+    noGames.style.textAlign = "center";
+    container.appendChild(noGames);
+    return;
+  }
+
   gamesToRender.forEach(game => {
     const card = document.createElement('div');
     card.classList.add('game-card');
@@ -25,7 +61,7 @@ function renderGames(gamesToRender) {
 
     const link = document.createElement('a');
     link.textContent = "Play";
-    link.href = game.path || game.url; // handle both path and url
+    link.href = game.path || game.url; // Use local path or external URL
     link.target = "_blank";
 
     card.appendChild(img);
@@ -39,7 +75,7 @@ function renderGames(gamesToRender) {
 // Initial render
 renderGames(games);
 
-// Optional: Search and category filtering
+// --- Search functionality ---
 const searchInput = document.getElementById('search');
 searchInput.addEventListener('input', () => {
   const query = searchInput.value.toLowerCase();
@@ -47,6 +83,7 @@ searchInput.addEventListener('input', () => {
   renderGames(filtered);
 });
 
+// --- Category filtering ---
 const categoryButtons = document.querySelectorAll('#categories button');
 categoryButtons.forEach(btn => {
   btn.addEventListener('click', () => {
