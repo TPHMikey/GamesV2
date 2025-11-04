@@ -10,23 +10,22 @@
   <header>
     <div class="logo">GameHub</div>
     <input type="text" id="search" placeholder="Search games...">
-    <nav>
-      <a href="#">Action</a>
-      <a href="#">Puzzle</a>
-      <a href="#">Adventure</a>
+    <nav id="categories">
+      <button data-category="all" class="active">All</button>
+      <button data-category="action">Action</button>
+      <button data-category="puzzle">Puzzle</button>
+      <button data-category="adventure">Adventure</button>
     </nav>
   </header>
 
   <section class="featured">
-    <div class="featured-game">
-      <img src="assets/images/featured.png" alt="Featured Game">
-      <h2>Featured Game</h2>
-      <a href="assets/games/Game1/index.html" target="_blank" class="play-btn">Play Now</a>
+    <div class="featured-game" id="featuredGame">
+      <!-- JS injects featured game here -->
     </div>
   </section>
 
   <section class="game-grid" id="gameGrid">
-    <!-- Game cards will be injected here via JS -->
+    <!-- JS injects game cards here -->
   </section>
 
   <footer>
