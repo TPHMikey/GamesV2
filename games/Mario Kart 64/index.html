@@ -1,19 +1,27 @@
-<html>
-    <head>
-        <!--HTML file auto generated using EmulatorJS codehelper-->
-    </head>
-    <body>
-        <div style="width:640px;height:480px;max-width:100%">
-            <div id="game"></div>
-        </div>
-        <script>
-            EJS_player = "#game";
-            EJS_core = "n64";
-            EJS_gameName = "Mario kart 64 (online)";
-            EJS_color = "#ff0000";
-            EJS_pathtodata = "http://192.168.1.120/";
-            EJS_gameUrl = "Mario Kart 64 (USA).n64";
-        </script>
-        <script src="http://192.168.1.120/loader.js"></script>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mario Kart 64</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Mario Kart 64</h1>
+  <canvas id="gameCanvas" width="640" height="480"></canvas>
+
+  <script type="module">
+    import init from './MK64.js'; // JS loader for your .wasm
+
+    const canvas = document.getElementById('gameCanvas');
+
+    // Initialize the WebAssembly module
+    init().then(Module => {
+      Module.canvas = canvas;
+      Module.run(); // Starts the game
+    }).catch(err => {
+      console.error("Error loading MK64:", err);
+    });
+  </script>
+</body>
 </html>
