@@ -39,7 +39,7 @@ const games = [
     {
     name: "Evowars.io",
     thumbnail: "assets/images/Evo.png",
-    url: "https://evowars.io/",
+    url: "https://evowars.io/?v=2.17.48",
     category: "action"
   },
 ];
