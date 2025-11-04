@@ -4,11 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GameHub</title>
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <div class="logo">GameHub</div>
+    <div class="logo">
+      <img src="assets/images/logo-icon.png" alt="GameHub Icon" class="logo-icon">
+      GameHub
+    </div>
     <input type="text" id="search" placeholder="Search games...">
     <nav id="categories">
       <button data-category="all" class="active">All</button>
@@ -20,12 +25,12 @@
 
   <section class="featured">
     <div class="featured-game" id="featuredGame">
-      <!-- JS injects featured game here -->
+      <!-- Featured game injected by JS -->
     </div>
   </section>
 
   <section class="game-grid" id="gameGrid">
-    <!-- JS injects game cards here -->
+    <!-- Game cards injected by JS -->
   </section>
 
   <footer>
