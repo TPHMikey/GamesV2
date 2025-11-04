@@ -8,6 +8,7 @@ const games = [
 
 const gameGrid = document.getElementById("gameGrid");
 
+// Display games in grid
 function displayGames(list) {
   gameGrid.innerHTML = "";
   list.forEach(game => {
