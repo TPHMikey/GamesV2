@@ -3,12 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Game Hub</title>
+  <title>GameHub</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>My Game Hub</h1>
-  <div id="game-grid" class="game-grid"></div>
+  <header>
+    <div class="logo">GameHub</div>
+    <input type="text" id="search" placeholder="Search games...">
+    <nav>
+      <a href="#">Action</a>
+      <a href="#">Puzzle</a>
+      <a href="#">Adventure</a>
+    </nav>
+  </header>
+
+  <section class="featured">
+    <div class="featured-game">
+      <img src="assets/images/featured.png" alt="Featured Game">
+      <h2>Featured Game</h2>
+      <a href="assets/games/Game1/index.html" target="_blank" class="play-btn">Play Now</a>
+    </div>
+  </section>
+
+  <section class="game-grid" id="gameGrid">
+    <!-- Game cards will be injected here via JS -->
+  </section>
+
+  <footer>
+    <p>© 2025 GameHub. All rights reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
