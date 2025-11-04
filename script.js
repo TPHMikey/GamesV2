@@ -10,7 +10,7 @@ const games = [
     name: "2D Minecraft",
     thumbnail: "assets/images/2DMC.png",
     path: "games/2D%20Minecraft/2D%20Minecraft.html",
-    category: "adventure"
+    category: "minecraft"
   },
   {
     name: "PacMan",
