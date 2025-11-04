@@ -3,7 +3,7 @@ const games = [
   {
     name: "Flappy Bird",
     thumbnail: "assets/images/flappy.png",
-    path: "games/FlappyBird/index.html",
+    path: "games/flappy/index.html",
     category: "puzzle"
   },
   {
