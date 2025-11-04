@@ -24,6 +24,12 @@ const games = [
     path: "games/Geometry%20Dash/index.html",
     category: "adventure"
   },
+   {
+    name: "Gorilla Tag 2D",
+    thumbnail: "assets/images/GTAG.png",
+    path: "games/Gorilla%20Tag%202D/index.html",
+    category: "adventure"
+  },
   // ADD NEW GAMES HERE
 ];
 
