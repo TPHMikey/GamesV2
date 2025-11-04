@@ -1,11 +1,3 @@
-
-const featuredSection = document.getElementById("featuredGame");
-featuredSection.innerHTML = `
-  <img src="${featuredGame.thumbnail}" alt="${featuredGame.name}">
-  <h2>${featuredGame.name}</h2>
-  <a href="${featuredGame.path}" target="_blank" class="play-btn">Play Now</a>
-`;
-
 // Game List (your actual games)
 const games = [
   { name: "Flappy Bird", thumbnail: "assets/images/flappy.png", path: "games/FlappyBird/index.html", category: "puzzle" },
