@@ -54,12 +54,7 @@ const games = [
     url: "https://mikeyboy6734.github.io/SM64JS/",
     category: "platformer"
   },
-    {
-    name: "Mario Kart 64",
-    thumbnail: "assets/images/MK64.png",
-    path: "games/Mario%20Kart%2064/index.html",
-    category: "racer"
-  },
+
 ];
 
 // Get the container from your HTML
