@@ -1,204 +1,100 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
-    <title>FNAF</title>
-    
-    <!-- Arc.io monetization -->
-    <script async src="https://arc.io/widget.min.js#5XPTU21J"></script>
-    
-    <!-- Maintenance script -->
-    <script src="maintenance.js"></script>
+<html lang="en">
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8NZMM8WN9"></script>
+<style type="text/css">
+  h1 {
+	  font-family: Arial, Helvetica, sans-serif;
+	  color: #F00;
+	  font-size: x-large;
+  }
+  p {
+	  font-family: Arial, Helvetica, sans-serif;
+	  color: #000;
+	  font-size: small;
+  }
+  body {
+	  background-color: #FFF;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+  }
+  #bloctxt {
+	  border-left-width: 5px;
+	  border-left-style: solid;
+	  border-left-color: #F00;
+	  padding-left: 10px;
+	  position: absolute;
+	  left: 50%%;
+	  width: 600px;
+	  margin-left: -260px
+  }
+</style>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+  <!-- Enables full-screen on iOS devices -->
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="HandheldFriendly" content="true" />
+
+  <title>Clickteam Fusion Developer 2.5 HTML5 Runtime</title>
+
+	<script>
+	   	// Detection of old browsers that do not support the canvas element
+		// Falls back to a default page
+	    if (!document.createElement("canvas").getContext)
+	    {
+			window.open("http://www.clickteam.com/html5-fallback", "_self");
+		}
+	</script>
+
+
+  	<!-- EXTRASOURCES -->
+    <!-- Loads the Javascript code...-->
+    <script src="src/Runtime.js"></script>
+
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-W8NZMM8WN9');
+
+	// Detection of when the html file is ran locally.
+	// You can remove this code for the final version
+	if (window.location.protocol == "file:")
+	{
+		document.write('<div id="bloctxt">');
+		document.write('<h1>The application cannot be run...</h1>');
+		document.write('<p>HTML browsers do not allow you to launch data files directly from the file system.<br>');
+		document.write('A drag & drop of the html file on a web-browser window will not work, on any machine.<br>');
+		document.write('Please use the Build & Run option (it opens a local web server) to run your application,<br>')
+		document.write('or upload your application folder to a remote web-server, and start it from there...</p>');
+		document.write('</div>');
+		throw new error("Cannot run application");
+	}
+
+  </script>
+</head>
+
+<body>
+
+<div style="display: inline-block; -webkit-user-select: none; text-align: left;">
+    <canvas id="MMFCanvas" width="1280" height="720">
+    	Your browser does not support Canvas.
+    </canvas>
+</div>
+
+
+    <script>
+        // RUNTIMESTART
+        // This is where the HTML5 runtime is actually started
+        window.addEventListener("load", windowLoaded, false);
+        function windowLoaded()
+        {
+            // Calls the runtime
+            // First parameter : name of the canvas element
+            // Second parameter : path to the cch file. Images and sounds must lay beside this file
+            new Runtime("MMFCanvas", "resources/FNAF1HTML5.cch");
+        }
+        // RUNTIMESTARTEND
     </script>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/logo-icon.png">
-
-    <style>
-        body {
-            color: #ffffff;
-            font-family: sans-serif;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-            background-color: #000000;
-        }
-        [hidden] { display: none !important; }
-        h1 { font-weight: normal; }
-        a { color: inherit; text-decoration: underline; cursor: pointer; }
-        #app, #loading, #error, #launch { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-        .screen { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; cursor: default; user-select: none; background-color: #000; }
-        #launch { background-color: rgba(0,0,0,0.7); cursor: pointer; }
-        .green-flag { width: 80px; height: 80px; padding: 16px; border-radius: 100%; background: rgba(255,255,255,0.75); border: 3px solid hsla(0,100%,100%,1); display: flex; justify-content: center; align-items: center; box-sizing: border-box; }
-        .progress-bar-outer { border: 1px solid currentColor; height: 10px; width: 200px; max-width: 200px; }
-        .progress-bar-inner { height: 100%; width: 0; background-color: currentColor; }
-        .loading-text { font-weight: normal; font-size: 36px; margin: 0 0 16px; }
-        #error-message, #error-stack { font-family: monospace; max-width: 600px; white-space: pre-wrap; user-select: text; }
-        #error-stack { text-align: left; max-height: 200px; overflow: auto; }
-        .control-button { width: 2rem; height: 2rem; padding: 0.375rem; margin: 0.5rem 0; user-select: none; cursor: pointer; border: 0; border-radius: 4px; }
-        .control-button:hover { background: #80008026; }
-        .control-button.active { background: #80008059; }
-        .fullscreen-button { background: white !important; }
-    </style>
-    <meta name="theme-color" content="#000000">
-</head>
-<body>
-  <noscript>Enable JavaScript</noscript>
-
-  <div id="app"></div>
-
-  <div id="launch" class="screen" hidden title="Click to start">
-    <div class="green-flag">
-      <svg viewBox="0 0 16.63 17.5" width="42" height="44">
-        <defs><style>.cls-1,.cls-2{fill:#4cbf56;stroke:#45993d;stroke-linecap:round;stroke-linejoin:round;}.cls-2{stroke-width:1.5px;}</style></defs>
-        <path class="cls-1" d="M.75,2A6.44,6.44,0,0,1,8.44,2h0a6.44,6.44,0,0,0,7.69,0V12.4a6.44,6.44,0,0,1-7.69,0h0a6.44,6.44,0,0,0-7.69,0"/>
-        <line class="cls-2" x1="0.75" y1="16.75" x2="0.75" y2="0.75"/>
-      </svg>
-    </div>
-  </div>
-
-  <div id="loading" class="screen">
-    <h1 class="loading-text">FNAF</h1>
-    <div class="progress-bar-outer"><div class="progress-bar-inner" id="loading-inner"></div></div>
-  </div>
-
-  <div id="error" class="screen" hidden>
-    <h1>Error</h1>
-    <details>
-      <summary id="error-message"></summary>
-      <p id="error-stack"></p>
-    </details>
-  </div>
-
-  <script src="script.js"></script>
-  <script>
-    const appElement = document.getElementById('app');
-    const launchScreen = document.getElementById('launch');
-    const loadingScreen = document.getElementById('loading');
-    const loadingInner = document.getElementById('loading-inner');
-    const errorScreen = document.getElementById('error');
-    const errorScreenMessage = document.getElementById('error-message');
-    const errorScreenStack = document.getElementById('error-stack');
-
-    const handleError = (error) => {
-      console.error(error);
-      if (!errorScreen.hidden) return;
-      errorScreen.hidden = false;
-      errorScreenMessage.textContent = '' + error;
-      let debug = error && error.stack || 'no stack';
-      debug += '\nUser agent: ' + navigator.userAgent;
-      errorScreenStack.textContent = debug;
-    };
-
-    const setProgress = (progress) => {
-      if (loadingInner) loadingInner.style.width = progress * 100 + '%';
-    };
-
-    const interpolate = (a, b, t) => a + t * (b - a);
-
-    try {
-      setProgress(0.1);
-
-      const scaffolding = new Scaffolding.Scaffolding();
-      scaffolding.width = 480;
-      scaffolding.height = 360;
-      scaffolding.resizeMode = "stretch";
-      scaffolding.editableLists = false;
-      scaffolding.setup();
-      scaffolding.appendTo(appElement);
-
-      const vm = scaffolding.vm;
-      window.scaffolding = scaffolding;
-      window.vm = scaffolding.vm;
-      window.Scratch = {
-        vm,
-        renderer: vm.renderer,
-        audioEngine: vm.runtime.audioEngine,
-        bitmapAdapter: vm.runtime.v2BitmapAdapter,
-        videoProvider: vm.runtime.ioDevices.video.provider
-      };
-
-      scaffolding.setUsername("player####".replace(/#/g, () => Math.floor(Math.random() * 10)));
-      scaffolding.setAccentColor("#800080");
-      scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(
-        ["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "217819833"
-      ));
-
-      vm.setTurboMode(false);
-      if (vm.setInterpolation) vm.setInterpolation(false);
-      if (vm.setFramerate) vm.setFramerate(30);
-      if (vm.renderer.setUseHighQualityRender) vm.renderer.setUseHighQualityRender(false);
-      if (vm.setRuntimeOptions) vm.setRuntimeOptions({
-        fencing: true,
-        miscLimits: true,
-        maxClones: 300,
-      });
-      if (vm.setCompilerOptions) vm.setCompilerOptions({
-        enabled: true,
-        warpTimer: false
-      });
-
-    } catch (e) {
-      handleError(e);
-    }
-  </script>
-
-  <script>
-    const getProjectData = (function() {
-      const storage = scaffolding.storage;
-      storage.onprogress = (total, loaded) => {
-        setProgress(interpolate(0.75, 0.98, loaded / total));
-      };
-
-      storage.addWebStore(
-        [storage.AssetType.ImageVector, storage.AssetType.ImageBitmap, storage.AssetType.Sound],
-        (asset) => new URL('./assets/' + asset.assetId + '.' + asset.dataFormat, location).href
-      );
-
-      return () => new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest();
-        xhr.onload = () => resolve(xhr.response);
-        xhr.onerror = () => reject(new Error(
-          location.protocol === 'file:' ?
-          'Zip environment must be used from a website, not file URL.' :
-          'Request to load project data failed.'
-        ));
-        xhr.onprogress = (e) => {
-          if (e.lengthComputable) setProgress(interpolate(0.1, 0.75, e.loaded / e.total));
-        };
-        xhr.responseType = 'arraybuffer';
-        xhr.open('GET', "./project.zip");
-        xhr.send();
-      });
-    })();
-  </script>
-
-  <script>
-    const run = async () => {
-      const projectData = await getProjectData();
-      await scaffolding.loadProject(projectData);
-      setProgress(1);
-
-      // Show click-to-launch screen
-      launchScreen.hidden = false;
-      launchScreen.addEventListener('click', () => {
-        launchScreen.hidden = true;
-        scaffolding.start();
-      });
-      launchScreen.focus();
-      loadingScreen.hidden = true;
-    };
-    run().catch(handleError);
-  </script>
 </body>
 </html>
