@@ -36,6 +36,12 @@ const games = [
     url: "https://mikeyboy6734.github.io/UCN",
     category: "action"
   },
+    {
+    name: "Evowars.io",
+    thumbnail: "assets/images/Evo.png",
+    url: "https://mikeyboy6734.github.io/Evowars",
+    category: "action"
+  },
 ];
 
 // Get the container from your HTML
