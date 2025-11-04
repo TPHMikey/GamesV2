@@ -9,18 +9,22 @@
 <body>
   <h1>Mario Kart 64</h1>
   <canvas id="gameCanvas" width="640" height="480"></canvas>
+  <p id="status">Loading...</p>
 
   <script type="module">
-    import init from './MK64.js'; // JS loader for your .wasm
+    import init from './gopher64.js';
 
     const canvas = document.getElementById('gameCanvas');
+    const status = document.getElementById('status');
 
-    // Initialize the WebAssembly module
     init().then(Module => {
       Module.canvas = canvas;
-      Module.run(); // Starts the game
+      Module.loadROM('games/Mario Kart 64/Mario Kart 64 (USA).n64');  // path to your legal ROM
+      Module.run();
+      status.textContent = "Game loaded!";
     }).catch(err => {
-      console.error("Error loading MK64:", err);
+      console.error(err);
+      status.textContent = "Error loading Mario Kart 64.";
     });
   </script>
 </body>
