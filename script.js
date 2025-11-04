@@ -48,6 +48,12 @@ const games = [
     url: "https://sam.fpr.net",
     category: "action"
   },
+    {
+    name: "Super Mario 64",
+    thumbnail: "assets/images/SM64.png",
+    url: "https://mikeyboy6734.github.io/SM64JS/",
+    category: "platformer"
+  },
 ];
 
 // Get the container from your HTML
