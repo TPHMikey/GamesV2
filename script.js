@@ -1,9 +1,24 @@
-// Game List (your actual games)
+// Game List
 const games = [
-  { name: "Flappy Bird", thumbnail: "assets/images/flappy.png", path: "games/FlappyBird/index.html", category: "puzzle" },
-  { name: "2D Minecraft", thumbnail: "assets/images/2DMC.png", path: "games/2D Minecraft/2D Minecraft.html", category: "adventure" },
-  { name: "3D Minecraft", thumbnail: "assets/images/PM.png", path: "games/PacMan/index.html", category: "adventure" },
-  // Add more games here
+  {
+    name: "Flappy Bird",
+    thumbnail: "assets/images/flappy.png",
+    path: "games/FlappyBird/index.html",
+    category: "puzzle"
+  },
+  {
+    name: "2D Minecraft",
+    thumbnail: "assets/images/2DMC.png",
+    path: "games/2D%20Minecraft/2D%20Minecraft.html",
+    category: "adventure"
+  },
+  {
+    name: "PacMan",
+    thumbnail: "assets/images/PM.png",
+    path: "games/PacMan/index.html",
+    category: "adventure"
+  },
+  // ADD NEW GAMES HERE
 ];
 
 const gameGrid = document.getElementById("gameGrid");
