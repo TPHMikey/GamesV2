@@ -27,6 +27,6 @@ const games = [
     name: "Five Nights At Freddys 1",
     thumbnail: "assets/images/FNAF1.png",
     url: "https://mikeyboy6734.github.io/FNAF1-Web",
-    category: "action"
+    category: "adventure"
   },
 ];
