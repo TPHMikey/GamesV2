@@ -12,12 +12,12 @@ featuredSection.innerHTML = `
   <a href="${featuredGame.path}" target="_blank" class="play-btn">Play Now</a>
 `;
 
-// Game List (only games you have)
+// Game List (your actual games)
 const games = [
   { name: "Flappy Bird", thumbnail: "assets/images/flappy.png", path: "assets/games/FlappyBird/index.html", category: "puzzle" },
   { name: "2D Minecraft", thumbnail: "assets/images/2DMC.png", path: "assets/games/2D Minecraft/2D Minecraft.html", category: "adventure" },
   { name: "3D Minecraft", thumbnail: "assets/images/PM.png", path: "assets/games/PacMan/index.html", category: "adventure" },
-  // Add more games here that you actually have
+  // Add more games here
 ];
 
 const gameGrid = document.getElementById("gameGrid");
