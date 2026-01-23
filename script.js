@@ -54,6 +54,12 @@ const games = [
     url: "https://mikeyboy6734.github.io/SM64JS/",
     category: "platformer"
   },
+   {
+    name: "WIP",
+    thumbnail: "assets/images/WIP.png",
+    path: "games/WIP/index.html",
+    category: "Racer"
+  },
 
 ];
 
